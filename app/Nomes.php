@@ -24,7 +24,7 @@ class Nomes extends Model
     }
     public function getNome($id)
     {
-        return $this->find($id);
+        return Nomes::query()->select('*')->where('id', '=', $id)->first();
     }
     public function updateSemModel($id, Array $options)
     {
